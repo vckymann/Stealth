@@ -77,7 +77,7 @@ export default function CartPage() {
                 ))}              
               </>
             </div>
-      <div className="flex flex-col w-[40rem] px-3 pb-3">
+      <div className="flex flex-col max-w-[40rem] px-3 pb-3">
         <div className="border-2 px-3 pb-2 bg-[#171717]">
           <div className="border-b-4 py-8">
             <Heading className="pl-7 ">Order Summary</Heading>
