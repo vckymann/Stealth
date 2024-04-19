@@ -4,9 +4,7 @@ import { useProducts } from "./hooks/productListHook";
 import ScrollToTopOnPageChange from "./hooks/scrollToTop";
 import { useMediaQuery } from "@mui/material";
 import Header from "./components/Header";
-import TemporaryDrawer from "./components/Navbar";
-import { inject } from '@vercel/analytics';import { injectSpeedInsights } from '@vercel/speed-insights';
- 
+import TemporaryDrawer from "./components/Navbar"; 
 
 
 function App() {
@@ -15,8 +13,6 @@ function App() {
   
   useFetchCart();
   useProducts();
-  inject();
-  injectSpeedInsights();
   
   return (
     <>
