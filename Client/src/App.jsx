@@ -5,7 +5,8 @@ import ScrollToTopOnPageChange from "./hooks/scrollToTop";
 import { useMediaQuery } from "@mui/material";
 import Header from "./components/Header";
 import TemporaryDrawer from "./components/Navbar";
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
     {isMobile ? <TemporaryDrawer /> : <Header />}
     <ScrollToTopOnPageChange />
     <Outlet />
+    <Analytics />
+    <SpeedInsights />
     </>
 
   );
