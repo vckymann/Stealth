@@ -30,8 +30,8 @@ function Search() {
 
 
   return (
-    <div className="flex gap-3">
-        <Input onKeyDown={(e) => {if (e.key === "Enter") {handleSearch()}}} className="px-28 border-b-[1px] border-r-0 border-l-0 border-t-0 border-green-400 placeholder:text-white bg-background no-autofill" name={"search"} placeholder={"Search"} label={"Search"} type={"text"} value={search} onChange={(e) => setSearch(e.target.value)} />
+    <div className="flex gap-3 bg-background">
+        <Input onKeyDown={(e) => {if (e.key === "Enter") {handleSearch()}}} className="px-28 border-b-[1px] border-green-400 placeholder:text-white bg-background no-autofill" name={"search"} placeholder={"Search"} label={"Search"} type={"text"} value={search} onChange={(e) => setSearch(e.target.value)} />
         <Button onClick={handleSearch}>
             <Img src="images/img_search_white_a700_18x18.svg" alt="search" className="w-[24px] h-[24px]" />
         </Button>
