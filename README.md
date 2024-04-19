@@ -1,8 +1,26 @@
-# React + Vite
+# Ecommerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an ecommerce web application built using React, Node.js, Express.js, Tailwind CSS, PostgreSQL, and Appwrite. It allows users to browse products, add them to cart, manage their cart, and place orders.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:**
+  - React
+  - Tailwind CSS
+
+- **Backend:**
+  - Node.js
+  - Express.js
+  - PostgreSQL
+
+- **Authentication:**
+  - Appwrite
+
+## Features
+
+- **Browse Products:** Users can browse through a wide range of products listed on the platform.
+- **Product Details:** Each product has detailed information including name, description, price, and images.
+- **Add to Cart:** Users can add products to their cart for purchase.
+- **Cart Management:** Users can view their cart, update the quantity of items, and remove items from the cart.
+- **User Authentication:** Secure user authentication system powered by Appwrite allows users to sign up, log in, and log out.
+- **Order Placement:** Users can place orders for the items in their cart.
