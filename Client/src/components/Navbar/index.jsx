@@ -77,11 +77,7 @@ export default function TemporaryDrawer() {
   return (
     <div className='bg-background border-b-[1px] border-green-500'>
       <Button className='p-2' onClick={toggleDrawer(true)}>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="fill-green-500 dark:text-gray-800">
-					<rect width="1052" height="30" x="35" y="96"></rect>
-					<rect width="1052" height="30" x="35" y="200"></rect>
-					<rect width="1052" height="30" x="35" y="310"></rect>
-				</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}

@@ -36,13 +36,13 @@ export default function HomepageVOnePage() {
             <Text className="text-xl text-center font-normal pt-2" as={'p'} >
               Find your Dream Shoe Pair From 5000+ Collections
             </Text>
-            <div className="grid grid-cols-3 place-items-center py-2 bg-green-500 rounded-sm lg:flex lg:justify-center lg:gap-12 mt-6">
-              <Img className="w-[100px] h-[60px]" src="images/brands/nike.png" alt="testImg" />
-              <Img className="w-[120px] h-[80px]" src="images/brands/adidas.png" alt="testImg" />
-              <Img className="w-[100px] h-[60px]" src="images/brands/under armour.png" alt="testImg" />
-              <Img className="w-[140px] h-[140px]" src="images/brands/north face.png" alt="testImg" />
-              <Img className="w-[120px] h-[110px]" src="images/brands/lv.png" alt="testImg" />
-              <Img className="w-[120px] h-[110px]" src="images/brands/converse.png" alt="testImg" />
+            <div className="grid grid-cols-2 place-items-center py-2 bg-green-500 rounded-sm lg:flex lg:justify-center lg:gap-12 mt-6">
+              <Img className="max-w-[100px] max-h-[60px]" src="images/brands/nike.png" alt="testImg" />
+              <Img className="max-w-[100px] max-h-[80px]" src="images/brands/adidas.png" alt="testImg" />
+              <Img className="max-w-[100px] max-h-[60px]" src="images/brands/under armour.png" alt="testImg" />
+              <Img className="max-w-[100px] max-h-[140px]" src="images/brands/north face.png" alt="testImg" />
+              <Img className="max-w-[100px] max-h-[110px]" src="images/brands/lv.png" alt="testImg" />
+              <Img className="max-w-[100px] max-h-[110px]" src="images/brands/converse.png" alt="testImg" />
             </div>
           </section>
 
@@ -90,15 +90,15 @@ export default function HomepageVOnePage() {
                   <Text className="font-medium text-gray-400 text-center lg:text-start">With trendy designs, vibrant colors and timeless patterns, Stealth offers a diverse range that complements every taste. Elevate your style with the perfect pairs.</Text>
                 </div>
               </div>
-              <div className="-mt-6">
-                {products ? <ThreeDCardDemo height="22rem" width="22rem" product={products[2]} details={false} lazyLoad={true}/> : "Loading"}
+              <div className="">
+                {products ? <ThreeDCardDemo height={"h-[22rem]"} width={"w-[20rem]"} product={products[2]} details={false} lazyLoad={true}/> : "Loading"}
               </div>
               </div>
             </section>
 
             <section className="lg:mt-24">
               <Text as={'h1'} className="text-center text-6xl font-bold leading-snug" >Featured Products</Text>
-              <div className="flex flex-col lg:flex-row justify-around gap-8 mt-24">
+              <div className="container flex flex-col lg:flex-row justify-around gap-8 mt-24 mx-auto">
                 {products ? products.slice(13, 16).map((product) => (
                    <ThreeDCardDemo key={product.id} height={"h-[26rem]"} width={"w-[20rem]"} product={product} details={false} lazyLoad={true}/>
                 )): "Loading"}
@@ -175,7 +175,7 @@ export default function HomepageVOnePage() {
               </div>                
                 <form onSubmit={() => {
                   alert("Thank you for contacting us. We will get back to you soon!")
-                }} className="text-black rounded-lg border bg-card text-card-foreground shadow-sm py-1 px-6 mr-10 max-w-[35rem] lg:w-full"><div className="flex flex-col p-6 space-y-1"><h3 className="text-white font-semibold tracking-tight text-2xl">Drop Us A Line</h3></div><div className="p-6 pt-0 grid gap-4"><div className="grid gap-2"><label className="text-sm text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label><Input type="email" className="py-2 pl-2 text-white flex placeholder:text-white h-10 w-full rounded-md border-green-500 border-input bg-background px-32 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="m@example.com" id="email" required/></div><div className="grid gap-2"><label className="text-sm font-medium text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="Message">Message</label><textarea required type="text" className="pl-2 border-green-500 flex placeholder:text-white h-10 w-full rounded-md text-white border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Enter your Message" id="Message"></textarea></div></div><div className="flex flex-col items-center gap-y-6 p-6 pt-0"><button className=" bg-green-400 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full flex items-center justify-center text-center cursor-pointer" type="submit">Submit</button></div></form>
+                }} className="text-black rounded-lg border bg-card text-card-foreground shadow-sm py-1 px-6 lg:mr-10 max-w-[35rem] lg:w-full"><div className="flex flex-col p-6 space-y-1"><h3 className="text-white font-semibold tracking-tight text-2xl">Drop Us A Line</h3></div><div className="p-6 pt-0 grid gap-4"><div className="grid gap-2"><label className="text-sm text-white font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label><Input type="email" className="py-2 pl-2 text-white flex placeholder:text-white h-10 w-full rounded-md border-green-500 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="m@example.com" id="email" required/></div><div className="grid gap-2"><label className="text-sm font-medium text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="Message">Message</label><textarea required type="text" className="pl-2 border-green-500 flex placeholder:text-white h-10 w-full rounded-md text-white border border-input bg-background px-3 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" placeholder="Enter your Message" id="Message"></textarea></div></div><div className="flex flex-col items-center gap-y-6 p-6 pt-0"><button className=" bg-green-400 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full flex items-center justify-center text-center cursor-pointer" type="submit">Submit</button></div></form>
               </div>
             </section>
 
