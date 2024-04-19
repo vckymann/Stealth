@@ -25,7 +25,7 @@ export default function HomepageVOnePage() {
               <Link to="/productlist"><Button className="bg-background border-2 border-green-500 text-white px-12 py-4 rounded-full mt-8 text-xl font-medium hover:bg-green-500">Shop Now<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevrons-down rotate-[-90deg] ml-1"><path d="m7 6 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg></Button> </Link>
               </div>
             <div className="flex flex-col flex-[1] items-center justify-center gap-y-10 pt-24 sm:pt-0">
-                <Img className="mr-4" src="../../public/images/Homepage/plz.png" alt="testImg" />                
+                <Img className="mr-4" src="../.././public/images/Homepage/plz.png" alt="testImg" />                
             </div>
           </section>
 
@@ -37,19 +37,19 @@ export default function HomepageVOnePage() {
               Find your Dream Shoe Pair From 5000+ Collections
             </Text>
             <div className="grid grid-cols-3 place-items-center py-2 bg-green-500 rounded-sm lg:flex lg:justify-center lg:gap-12 mt-6">
-              <Img className="w-[100px] h-[60px]" src="../../public/images/brands/nike.png" alt="testImg" />
-              <Img className="w-[120px] h-[80px]" src="../../public/images/brands/adidas.png" alt="testImg" />
-              <Img className="w-[100px] h-[60px]" src="../../public/images/brands/under armour.png" alt="testImg" />
-              <Img className="w-[140px] h-[140px]" src="../../public/images/brands/north face.png" alt="testImg" />
-              <Img className="w-[120px] h-[110px]" src="../../public/images/brands/lv.png" alt="testImg" />
-              <Img className="w-[120px] h-[110px]" src="../../public/images/brands/converse.png" alt="testImg" />
+              <Img className="w-[100px] h-[60px]" src="../.././public/images/brands/nike.png" alt="testImg" />
+              <Img className="w-[120px] h-[80px]" src="../.././public/images/brands/adidas.png" alt="testImg" />
+              <Img className="w-[100px] h-[60px]" src="../.././public/images/brands/under armour.png" alt="testImg" />
+              <Img className="w-[140px] h-[140px]" src="../.././public/images/brands/north face.png" alt="testImg" />
+              <Img className="w-[120px] h-[110px]" src="../.././public/images/brands/lv.png" alt="testImg" />
+              <Img className="w-[120px] h-[110px]" src="../.././public/images/brands/converse.png" alt="testImg" />
             </div>
           </section>
 
           <section className="mt-24 border-t-2 border-b-2 border-green-500">
             <div className="flex flex-col items-center lg:flex-row lg:items-start lg:justify-center py-2">
             <div>
-              <Img className="w-[40rem] h-[39rem] lg:h-[34rem] object-cover" src="../../public/images/Homepage/poster-22.jpg" alt="testImg" />
+              <Img className="w-[40rem] h-[39rem] lg:h-[34rem] object-cover" src="../.././public/images/Homepage/poster-22.jpg" alt="testImg" />
             </div>
             <div className="flex flex-col gap-y-12 justify-center">
                 <div className="flex flex-col gap-y-8 items-center">
