@@ -5,23 +5,24 @@ import ScrollToTopOnPageChange from "./hooks/scrollToTop";
 import { useMediaQuery } from "@mui/material";
 import Header from "./components/Header";
 import TemporaryDrawer from "./components/Navbar";
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/react";
+import { inject } from '@vercel/analytics';import { injectSpeedInsights } from '@vercel/speed-insights';
+ 
+
 
 function App() {
-
+  
   const isMobile = useMediaQuery("(max-width: 1024px)"); 
-
+  
   useFetchCart();
   useProducts();
+  inject();
+  injectSpeedInsights();
   
   return (
     <>
     {isMobile ? <TemporaryDrawer /> : <Header />}
     <ScrollToTopOnPageChange />
     <Outlet />
-    <Analytics />
-    <SpeedInsights />
     </>
 
   );
