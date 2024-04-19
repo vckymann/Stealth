@@ -76,9 +76,9 @@ export default function ProductDetailsPage() {
                   Quantity
                 </Text>
                 <div className="flex flex-row justify-start items-center gap-4 w-[63%]">
-                  <button onClick={() => setProductQuantity(productQuantity > 1 ? productQuantity - 1 : productQuantity)} className=" bg-green-500 px-3 text-2xl text-black">-</button>
+                  <button onClick={() => setProductQuantity(productQuantity > 1 ? productQuantity - 1 : productQuantity)} className=" bg-green-500 px-3 text-2xl">-</button>
                   <p className="w-8">{productQuantity}</p>
-                  <button onClick={() => setProductQuantity(productQuantity + 1)} className=" bg-green-500 text-black px-3 text-2xl">+</button>
+                  <button onClick={() => setProductQuantity(productQuantity + 1)} className=" bg-green-500 px-3 text-2xl">+</button>
                 </div>
               </div>
               <Button
