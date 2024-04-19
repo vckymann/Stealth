@@ -6,7 +6,7 @@ const { createCart,addProductsToCart, getCartItems, updateCartItems, deleteCartI
 const { getUserInfo } = require("./routes/userRoute");
 
 const app = express();
-const connectionString = "postgresql://inventory_owner:14xJMYFGzAuR@ep-solitary-block-a59pobxc.us-east-2.aws.neon.tech/inventory?sslmode=require";
+const connectionString = process.env.DATABASE_URL;
 
 const pool = new Pool({
     connectionString: connectionString,
