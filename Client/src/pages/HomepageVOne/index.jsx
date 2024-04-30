@@ -46,7 +46,7 @@ export default function HomepageVOnePage() {
             </div>
           </section>
 
-          <section className="mt-24 border-t-2 border-b-2 border-green-500">
+          <section className="mt-1 border-t-2 border-b-2 border-green-500">
             <div className="flex flex-col items-center lg:flex-row lg:items-start lg:justify-center py-2">
             <div>
               <Img className="w-[40rem] h-[39rem] lg:h-[34rem] object-cover" src="images/Homepage/poster-22.jpg" alt="testImg" />
@@ -62,8 +62,8 @@ export default function HomepageVOnePage() {
           </section>
           {
           isMobile !== true &&
-          <section className="mt-4">
-            <div className="flex justify-around pt-4">
+          <section className="mt-2">
+            <div className="flex justify-around pt-1">
               <span className="mx-4 text-5xl font-semibold text-green-500">STEALTH</span>
               <span className="mx-4 text-5xl font-semibold text-green-500">STEALTH</span>
               <span className="mx-4 text-5xl font-semibold text-green-500">STEALTH</span>
@@ -168,10 +168,10 @@ export default function HomepageVOnePage() {
 
             <section className="mt-24 px-6 pt-18 pb-20">
               <div className="flex flex-col gap-12 items-center lg:flex-row lg:justify-between">
-              <div className="flex flex-col gap-2 items-center lg:ml-6">
-              <Text className="text-2xl font-semibold">Contact Us</Text>
-              <Text className="text-4xl font-bold">Don't hesitate to Talk with Us</Text>
-              <Text className="text-3xl font-normal">Relax, we are ready to support 24/7</Text>
+              <div className="flex flex-col gap-2">
+              <Text className="text-2xl font-semibold text-center lg:text-start">Contact Us</Text>
+              <Text className="text-3xl font-bold text-center lg:text-start lg:text-4xl">Don't hesitate to Talk with Us</Text>
+              <Text className="font-normal text-center lg:text-start lg:text-2xl">Relax, we are ready to support 24/7</Text>
               </div>                
                 <form onSubmit={() => {
                   alert("Thank you for contacting us. We will get back to you soon!")

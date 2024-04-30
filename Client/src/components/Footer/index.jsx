@@ -7,7 +7,7 @@ export default function Footer({ ...props }) {
 	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="lg:w-1/3">
 			<Link to="/" className="flex justify-start mb-12 space-x-3 lg:justify-start">				
-				<span className="self-center text-5xl font-bold text-green-500">SPIKE</span>
+				<span className="self-center text-5xl font-bold text-green-500">STEALTH</span>
 			</Link>
 		</div>
 		<div className="grid grid-cols-1 sm:grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 lg:grid-cols-4">
