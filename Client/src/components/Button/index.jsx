@@ -8,7 +8,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${className} flex items-center justify-center text-center cursor-pointer`}
+      className={`${className} flex items-center text-center cursor-pointer`}
       {...restProps}
     >
       {children}
