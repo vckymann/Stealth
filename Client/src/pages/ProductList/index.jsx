@@ -119,7 +119,7 @@ export default function ProductListPage() {
                       )
                     })}
                   </div>
-                  ) : <Img className={"h-60 sm:h-96"} src="images/not-available.png" />}
+                  ) : <Img src="images/productntfound.png" />}
                 </div>
               </div>
             </div>
