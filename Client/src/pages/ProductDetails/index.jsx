@@ -33,8 +33,8 @@ export default function ProductDetailsPage() {
             <div className="flex flex-col items-center justify-start w-full gap-8">
               <div className="flex flex-row justify-center w-full">
                 <Img
-                  src={product.images}
-                  alt="placeholder_one"
+                  src={product.images ? product.images : ""}
+                  alt={product.name}
                   className="w-[500px] object-cover"
                 />
               </div> 
@@ -55,7 +55,7 @@ export default function ProductDetailsPage() {
                   </Text>
                 </div>
                 <div className="flex flex-col items-center justify-start w-full gap-[31px] lg:items-start">
-                  <Heading size="md" as="h1" className="w-[49%] text-green-500 text-center lg:text-start">
+                  <Heading size="md" as="h1" className="text-green-500 text-center lg:text-start">
                     <>
                       {product.name}
                     </>

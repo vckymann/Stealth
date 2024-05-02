@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -12,15 +11,24 @@ import { Link } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import { logout } from '../../store/authslice';
 import { resetCart } from '../../store/cartSlice';
+import { useState } from 'react';
 
 export default function TemporaryDrawer() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
   const status = useSelector((state) => state.auth.status);
+
   const dispatch = useDispatch();
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const handleClick = () => {
+    dispatch(logout());
+    dispatch(resetCart());
+    toggleDrawer(false);
+  }
 
   const DrawerList = (
     <Box className='bg-background text-white h-full' sx={{ width: 250 }} role="presentation">
@@ -30,7 +38,7 @@ export default function TemporaryDrawer() {
         <List>        
         <>        
             <ListItem >        
-                <Search />
+                <Search onClose={toggleDrawer(false)} />
             </ListItem>
         </>
         </List>
@@ -56,11 +64,7 @@ export default function TemporaryDrawer() {
             </ListItemButton>
         </Link>
         {status ? (
-        <ListItemButton onClick={() => {
-          dispatch(logout());
-          dispatch(resetCart());
-          toggleDrawer(false);
-        }}>
+        <ListItemButton onClick={handleClick}>
         <ListItemText primary="Logout" />
         </ListItemButton>
         ): (
@@ -75,7 +79,7 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div className='bg-background border-b-[1px] border-green-500'>
+    <div className='bg-background border-b-[1px] border-green-500 sticky top-0 z-10'>
       <Button className='p-2' onClick={toggleDrawer(true)}>
       <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </Button>

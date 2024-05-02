@@ -9,7 +9,7 @@ export function ThreeDCardDemo({product, handleDetails,width,height,details = tr
         <CardItem translateZ="100" className="w-full flex justify-center items-center">
           <Img
           loading={lazyLoad ? "lazy" : "eager"}
-          src={product.images? product.images : ""}
+          src={product.images ? product.images : ""}
             alt="thumbnail"
             className=" w-[17rem] h-auto object-cover rounded-xl group-hover/card:shadow-xl"
           />
