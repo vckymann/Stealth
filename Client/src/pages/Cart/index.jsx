@@ -41,7 +41,7 @@ export default function CartPage() {
               {cartItems.length === 0 ? <Text className="text-center text-4xl py-12">No items in cart</Text> : 
                 cartItems.map((item) => (
                   <div className="flex flex-col sm:flex-row gap-12 justify-around max-w-[40rem] w-full items-center shadow-[0px_2px_1px_0px] shadow-green-500 rounded-md bg-[#323030] p-4" key={item.product_id}>
-                    <Img className="w-[13rem] sm:w-[17rem]" src={item.images} />
+                    <Img className="w-[13rem] sm:w-[17rem]" src={item.images ? item.images : ""} />
                     <div className="flex flex-col items-center sm:items-start  gap-3">
                     <Text className="text-xl">{item.product}</Text>
                     <Text className="pr-2">Price - ${item.price}</Text>
