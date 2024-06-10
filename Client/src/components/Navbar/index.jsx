@@ -13,7 +13,7 @@ import { logout } from '../../store/authslice';
 import { resetCart } from '../../store/cartSlice';
 import { useState } from 'react';
 
-export default function TemporaryDrawer() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const status = useSelector((state) => state.auth.status);
