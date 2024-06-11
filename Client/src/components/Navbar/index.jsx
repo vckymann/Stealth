@@ -12,6 +12,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { logout } from '../../store/authslice';
 import { resetCart } from '../../store/cartSlice';
 import { useState } from 'react';
+import authService from '../../appwrite/auth';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Navbar() {
   const handleClick = () => {
     dispatch(logout());
     dispatch(resetCart());
+    authService.logout();
     toggleDrawer(false);
   }
 
