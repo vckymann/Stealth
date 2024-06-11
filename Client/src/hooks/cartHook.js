@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {fetchCartItemsFailure,fetchCartItemsSuccess, updateCartItems, removeCartItems,setTotalPrice } from "../store/cartSlice";
-import API from "../apis/api";
 import { logout } from "../store/authslice";
+import API from "../apis/api";
   
 export function useFetchCart() {
 

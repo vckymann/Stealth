@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authslice";
 import { resetCart } from "../../store/cartSlice";
+import authService from "../../appwrite/auth";
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Search from "../Search";
@@ -32,6 +33,7 @@ export default function Header() {
                 <Button onClick={() => {
                   dispatch(logout());
                   dispatch(resetCart());
+                  authService.logout();
                 }} size="5xl" shape="square" className="font-bold mr-4">
                   <LogoutIcon sx={{ fontSize: 30, marginTop: 0.3 }} />
                  </Button> 

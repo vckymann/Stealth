@@ -49,21 +49,12 @@ export class AuthService {
     async logout() {
 
         try {
-            await this.account.deleteSessions();
+            await this.account.deleteSession('current');
         } catch (error) {
             console.log("Appwrite serive :: logout :: error", error);
         }
     }
 
-    async updatePassword({currentPassword, newPassword}) {
-        try {
-            const response = await this.account.updatePassword(newPassword, currentPassword);
-            return response
-        } catch (error) {
-            throw error
-        }
-    }
- 
 }
 
 const authService = new AuthService();
