@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authslice";
 import { resetCart } from "../../store/cartSlice";
+import PersonIcon from '@mui/icons-material/Person';
+import LogoutIcon from '@mui/icons-material/Logout';
 import Search from "../Search";
 
 export default function Header() {
@@ -30,25 +32,15 @@ export default function Header() {
                 <Button onClick={() => {
                   dispatch(logout());
                   dispatch(resetCart());
-                }} size="5xl" shape="square" className="sm:px-5 font-bold min-w-[107px]">
-                  Logout
-                </Button>
+                }} size="5xl" shape="square" className="font-bold mr-4">
+                  <LogoutIcon sx={{ fontSize: 30, marginTop: 0.3 }} />
+                 </Button> 
                 : 
                 <Link to="/login">
-                <Button size="5xl" shape="square" className="sm:px-5 font-bold min-w-[107px]">
-                  Login
-                </Button>
+                  <PersonIcon sx={{ fontSize: 30, marginRight: 3, marginTop: 0.3 }} />
                 </Link> }
           <Button />
         </div>
-        <ul className="flex justify-around items-center mr-8">
-          <a className="px-2" href="#">
-            <Img className={"w-[30px]"} src="images/social media/icons8-facebook-50.png" />
-            </a>
-          <a className="px-2 pt-[1px]" href="#">
-          <Img className={"w-[30px]"} src="images/social media/icons8-instagram-50.png" />
-          </a>          
-        </ul>
         <Link className="relative" to="/cart">
           {count > 0 && <Text className="flex justify-center items-center absolute bg-green-500 text-black font-medium h-5 w-5 rounded-full pt-[4px] top-[-7px] right-[28px] text-[13.5px]">{count}</Text>}
         <Img className={"mr-8 w-[30px]"} src="images/img_cart_white_a700.svg" />

@@ -1,3 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/PoppinsBold.ttf");
+  font-family: "Poppins";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/PoppinsMedium.ttf");
+  font-family: "Poppins";
+  font-weight: 500;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/PlayfairDisplayRegular.ttf");
+  font-family: "Playfair Display";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/PoppinsRegular.ttf");
+  font-family: "Poppins";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/PlayfairDisplayBold.ttf");
+  font-family: "Playfair Display";
+  font-weight: 700;
+}
+
+
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="search"]:focus,
+[type="checkbox"]:focus,
+[type="radio"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: "#393d46";
+  border-color: "#393d46";
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +65,18 @@ body {
   line-height: normal;
   font-family: inherit;
   margin: unset;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.css-1axpljh-MuiSvgIcon-root-MuiStepIcon-root circle {
+  stroke-width: 0;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.css-1axpljh-MuiSvgIcon-root-MuiStepIcon-root {
+  stroke: white;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.Mui-completed.css-1axpljh-MuiSvgIcon-root-MuiStepIcon-root {
+  stroke: none;
 }
 
 /* *{
