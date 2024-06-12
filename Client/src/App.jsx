@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useFetchCart } from "./hooks/cartHook";
 import { useProducts } from "./hooks/productListHook";
 import ScrollToTopOnPageChange from "./hooks/scrollToTop";
@@ -10,7 +10,10 @@ import { inject } from "@vercel/analytics";
 
 function App() {
   
-  const isMobile = useMediaQuery("(max-width: 1024px)"); 
+  const isMobile = useMediaQuery("(max-width: 1024px)");
+  const location = useLocation();
+
+  const isCheckoutPage = location.pathname === "/checkout";
   
   useFetchCart();
   useProducts();
@@ -18,7 +21,7 @@ function App() {
   
   return (
     <>
-    {isMobile ? <Navbar /> : <Header />}
+    {!isCheckoutPage && (isMobile ? <Navbar /> : <Header />)}
     <ScrollToTopOnPageChange />
     <Outlet />
     </>
