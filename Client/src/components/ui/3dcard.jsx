@@ -21,13 +21,13 @@ export function ThreeDCardDemo({product, handleDetails,width,height,details = tr
             translateZ={10}
             className="text-[0.8rem] text-white pr-4"
           >
-          {product.name}
+          {product && product.name}
           </CardItem>
           <CardItem
             translateZ={10}
             className="text-[0.8rem] text-white pl-4"
           >
-            ${product.price}
+            ${product && product.price}
           </CardItem>
         </div>
         <div className="flex justify-between items-center mt-5">
