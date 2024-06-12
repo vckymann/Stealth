@@ -19,7 +19,7 @@ import Checkout from './pages/Checkout/Checkout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // This is your main layout component
+    element: <App />,
     children: [
       { path: "/",
         element: (

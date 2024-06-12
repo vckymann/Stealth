@@ -1,16 +1,19 @@
 import Input from "../Input"
 import { useState } from "react"
-import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { searchProducts } from "../../store/slices/productslice"
 import { Button } from "../Button"
 import { Img } from "../Img"
 import { useNavigate } from "react-router-dom"
+import useAppSelectors from "../../store/selectors"
+import PropTypes from "prop-types"
 
 function Search({onClose}) {
+  
+  const { products} = useAppSelectors() 
 
     const [search, setSearch] = useState("")
-    const products = useSelector((state) => state.products.products);
+
     const dispatch = useDispatch()   
     const navigate = useNavigate() 
 
@@ -48,3 +51,7 @@ function Search({onClose}) {
 }
 
 export default Search
+
+Search.propTypes = {
+  onClose: PropTypes.func
+}

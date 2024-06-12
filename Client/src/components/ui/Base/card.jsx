@@ -1,8 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
 import { createContext, useState, useContext, useRef, useEffect } from "react";
-// eslint-disable-next-line no-unused-vars
-import { cn } from "../../../utils/cn";
+import PropTypes from "prop-types";
 
 const MouseEnterContext = createContext([false, () => {}]);
 
@@ -89,3 +87,28 @@ export const useMouseEnter = () => {
   }
   return context;
 };
+
+CardContainer.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  containerClassName: PropTypes.string,
+};
+
+CardBody.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+CardItem.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  translateX: PropTypes.number,
+  translateY: PropTypes.number,
+  translateZ: PropTypes.number,
+  rotateX: PropTypes.number,
+  rotateY: PropTypes.number,
+  rotateZ: PropTypes.number,
+  as: PropTypes.string
+};
+
+

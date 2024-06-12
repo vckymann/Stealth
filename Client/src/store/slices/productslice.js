@@ -56,7 +56,7 @@ const productSlice = createSlice({
 
            state.similarProducts = state.products
                .filter((product) => product.category_id === action.payload.category_Id && product.id !== productId)
-               .slice(0, 4); // Limit to 4 products
+               .slice(0, 4);
         },
         searchProducts: (state, action) => {
           state.filteredProducts = action.payload; 

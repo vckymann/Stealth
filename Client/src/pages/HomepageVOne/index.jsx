@@ -2,13 +2,15 @@
 import { Helmet } from "react-helmet";
 import { Text, Img, Button, Input } from "../../components";
 import { ThreeDCardDemo } from "../../components/ui/3dcard";
-import { useSelector } from "react-redux";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
+import useAppSelectors from "../../store/selectors";
 export default function HomepageVOnePage() {
-  const products = useSelector((state) => state.products.products);
+
+  const { products } = useAppSelectors();
   const isMobile = useMediaQuery("(max-width: 1024px)");
+
   return (
     <>
       <Helmet>

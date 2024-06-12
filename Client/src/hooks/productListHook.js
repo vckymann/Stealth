@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchProductsFailure, fetchProductsSuccess, applyFilter, applySort, getProductDetails } from "../store/slices/productslice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -8,8 +8,7 @@ import useAppSelectors from "../store/selectors";
 export function useProducts() {
 
   const dispatch = useDispatch();
-  const productsFetched = useSelector((state) => state.products.productsFetched);
-
+  const { productsFetched } = useAppSelectors();
   useEffect(() => {
     if (!productsFetched) {
       const fetchData = async () => {

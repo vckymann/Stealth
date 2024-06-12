@@ -5,14 +5,12 @@ import authSlice from "./slices/authslice";
 import productSlice from "./slices/productslice";
 import cartSlice from "./slices/cartSlice";
 
-// Combine your reducers
 const rootReducer = combineReducers({
  auth: authSlice,
  products: productSlice,
  cart:cartSlice,
 });
 
-// Configure persistReducer
 const persistConfig = {
  key: 'root',
  version: 1,
@@ -21,7 +19,6 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Create the store
 const store = configureStore({
  reducer: persistedReducer,
  middleware: (getDefaultMiddleware) =>
@@ -32,7 +29,6 @@ const store = configureStore({
     }),
 });
 
-// Create the persistor
 const persistor = persistStore(store);
 
 export { store, persistor };
