@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {fetchCartItemsFailure,fetchCartItemsSuccess, updateCartItems, removeCartItems,setTotalPrice } from "../store/cartSlice";
-import { logout } from "../store/authslice";
+import { useDispatch } from "react-redux";
+import {fetchCartItemsFailure,fetchCartItemsSuccess, updateCartItems, removeCartItems,setTotalPrice } from "../store/slices/cartSlice";
+import { logout } from "../store/slices/authslice";
 import API from "../apis/api";
+import useAppSelectors from "../store/selectors";
   
 export function useFetchCart() {
 
-  const userId = useSelector((state) => state.auth.userId);
-  const cartItemsFetched = useSelector((state) => state.cart.cartItemsFetched);
+  const { userId, cartItemsFetched } = useAppSelectors();
+
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -32,14 +33,13 @@ export function useFetchCart() {
 
 function useCartPage() {
   
-  const cartId = useSelector((state) => state.auth.cartId);
-  const { cartItems, error, loading } = useSelector((state) => state.cart);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const { cartId, cartItems, cartError, cartLoading, totalPrice } = useAppSelectors();
+
   const [editProduct, setEditProduct] = useState(null);
   const [updatedQuantity,  setUpdatedQuantity] = useState({});
   const [disabled, setDisabled] = useState(false);
+
   const dispatch = useDispatch()
-  
   
     useEffect(() => {
       if (cartItems && cartItems.length > 0) {
@@ -81,8 +81,8 @@ function useCartPage() {
     totalPrice,
     editProduct,
     updatedQuantity,
-    error,
-    loading,
+    cartError,
+    cartLoading,
     disabled,
     handleUpdateQuantity,
     handleConfirm,

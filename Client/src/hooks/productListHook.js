@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsFailure, fetchProductsSuccess, applyFilter, applySort, getProductDetails } from "../store/productslice";
+import { fetchProductsFailure, fetchProductsSuccess, applyFilter, applySort, getProductDetails } from "../store/slices/productslice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import API from "../apis/api";
+import useAppSelectors from "../store/selectors";
 
 export function useProducts() {
 
@@ -27,7 +28,9 @@ export function useProducts() {
 }
 
 function useProductListPage() {
-  const { loading, error, currentPage, filteredProducts, productsFetched } = useSelector((state) => state.products);
+
+  const { ProductsLoading, productsError, currentPage, filteredProducts, productsFetched } = useAppSelectors();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,8 +48,8 @@ function useProductListPage() {
   };
 
   return {
-    loading,
-    error,
+    ProductsLoading,
+    productsError,
     currentPage,
     filteredProducts,
     productsFetched,

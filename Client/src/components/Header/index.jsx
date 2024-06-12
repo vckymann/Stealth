@@ -1,16 +1,17 @@
 import { Button, Img, Text } from "./..";
 import { Link, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../store/authslice";
-import { resetCart } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/slices/authslice";
+import { resetCart } from "../../store/slices/cartSlice";
 import authService from "../../appwrite/auth";
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Search from "../Search";
+import useAppSelectors from "../../store/selectors";
 
 export default function Header() {
-  const status = useSelector((state) => state.auth.status);
-  const count = useSelector((state) => state.cart.count);
+  const { authStatus, count } = useAppSelectors();
+
   const dispatch = useDispatch();
 
   return (
@@ -29,7 +30,7 @@ export default function Header() {
       <Search className="bg-background" />
       <div className="flex justify-around items-center">
         <div>
-        {status ?
+        {authStatus ?
                 <Button onClick={() => {
                   dispatch(logout());
                   dispatch(resetCart());

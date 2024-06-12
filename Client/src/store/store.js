@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
-import authSlice from "./authslice";
-import productSlice from "./productslice";
-import cartSlice from "./cartSlice";
+import authSlice from "./slices/authslice";
+import productSlice from "./slices/productslice";
+import cartSlice from "./slices/cartSlice";
 
 // Combine your reducers
 const rootReducer = combineReducers({

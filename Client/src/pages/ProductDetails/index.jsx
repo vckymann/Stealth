@@ -7,8 +7,8 @@ import Loader from "../../components/Loader";
 
 export default function ProductDetailsPage() {
   const {
-    product,
-    similarProducts,
+    selectedProduct,
+    similarProducts,    
     loading,
     AddToCartError,
     addToCartSuccess,
@@ -21,7 +21,7 @@ export default function ProductDetailsPage() {
   
   return (
     <>
-    {product ?
+    {selectedProduct ?
     <>
       <Helmet>
         <title>Shop</title>
@@ -33,8 +33,8 @@ export default function ProductDetailsPage() {
             <div className="flex flex-col items-center justify-start w-full gap-8">
               <div className="flex flex-row justify-center w-full">
                 <Img
-                  src={product.images ? product.images : ""}
-                  alt={product.name}
+                  src={selectedProduct.images ? selectedProduct.images : ""}
+                  alt={selectedProduct.name}
                   className="w-[500px] object-cover"
                 />
               </div> 
@@ -51,23 +51,23 @@ export default function ProductDetailsPage() {
                     &gt;
                   </Text>
                   <Text as="p" className="text-2xl font-medium">
-                    {product.name}
+                    {selectedProduct.name}
                   </Text>
                 </div>
                 <div className="flex flex-col items-center justify-start w-full gap-[31px] lg:items-start">
                   <Heading size="md" as="h1" className="text-green-500 text-center lg:text-start">
                     <>
-                      {product.name}
+                      {selectedProduct.name}
                     </>
                   </Heading>
                   <div className="flex flex-col items-center justify-start w-full gap-[31px] lg:items-start">
                     <Text as="p" className="text-4xl font-medium">
-                     ${product.price}
+                     ${selectedProduct.price}
                     </Text>
-                    <RatingBar value={product.rating}  starCount={5} />
+                    <RatingBar value={selectedProduct.rating}  starCount={5} />
                   </div>
                 <Text className="leading-8 text-xl text-center lg:text-start max-w-[50rem] px-2">
-                    {product.description}
+                    {selectedProduct.description}
                   </Text>
                 </div>
               </div>
@@ -111,7 +111,9 @@ export default function ProductDetailsPage() {
         </div>        
       </div>
       </>
-      : <Loader /> }
+      : <div className="w-full h-screen bg-white">
+        <Loader /> 
+        </div>}
     </>
   );
 }

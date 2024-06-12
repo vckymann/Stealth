@@ -8,16 +8,18 @@ import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
-import { logout } from '../../store/authslice';
-import { resetCart } from '../../store/cartSlice';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/slices/authslice';
+import { resetCart } from '../../store/slices/cartSlice';
 import { useState } from 'react';
 import authService from '../../appwrite/auth';
+import useAppSelectors from '../../store/selectors';
 
 export default function Navbar() {
+  
   const [open, setOpen] = useState(false);
 
-  const status = useSelector((state) => state.auth.status);
+  const { authStatus } = useAppSelectors();
 
   const dispatch = useDispatch();
 
@@ -65,7 +67,7 @@ export default function Navbar() {
                 <ListItemText primary="About Us" />
             </ListItemButton>
         </Link>
-        {status ? (
+        {authStatus ? (
         <ListItemButton onClick={handleClick}>
         <ListItemText primary="Logout" />
         </ListItemButton>

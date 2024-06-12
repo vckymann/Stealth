@@ -14,8 +14,8 @@ export default function CartPage() {
     cartItems,
     editProduct,
     totalPrice,
-    error,
-    loading,
+    cartError,
+    cartLoading,
     handleUpdateQuantity,
     handleEdit,
     handleDelete,
@@ -32,7 +32,7 @@ export default function CartPage() {
 
   return (
     <>
-    {loading ? <Loader /> : error ? <Errorpage /> :
+    {cartLoading ? <Loader /> : cartError ? <Errorpage /> :
     <>
       <div className="flex flex-col min-h-screen pb-8 mx-auto px-5 bg-background text-white pt-10 max-w-[102rem]">
         <div className="flex flex-col items-center lg:flex-row lg:items-start gap-6 h-full">      

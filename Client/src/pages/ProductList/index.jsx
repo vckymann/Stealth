@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Text, Img, Button } from "../../components";
-import { refreshProducts } from "../../store/productslice";
+import { refreshProducts } from "../../store/slices/productslice";
 import { ThreeDCardDemo } from "../../components/ui/3dcard";
 import useProductListPage from "../../hooks/productListHook";
 import Loader from "../../components/Loader";
@@ -10,8 +10,8 @@ import Errorpage from "../ErrorPage/index";
 export default function ProductListPage() {
 
     const {
-        error,
-        loading,
+        productsError,
+        ProductsLoading,
         filteredProducts,
         currentPage,
         dispatch,
@@ -22,9 +22,9 @@ export default function ProductListPage() {
 
   return (
   <>
-    {loading ? <Loader />
+    {ProductsLoading ? <Loader />
     :
-    error ? <Errorpage />
+    productsError ? <Errorpage />
     :
     <>
       <Helmet>

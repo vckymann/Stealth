@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import API from "../apis/api";
 import { useNavigate } from "react-router-dom";
-import { getProductDetails } from "../store/productslice";
+import { getProductDetails } from "../store/slices/productslice";
 import { useState } from "react";
-import { refreshCartItems } from "../store/cartSlice";
+import { refreshCartItems } from "../store/slices/cartSlice";
+import useAppSelectors from "../store/selectors";
 
 
 function useProductDetailsPage() {
@@ -13,11 +14,7 @@ function useProductDetailsPage() {
   const dispatch = useDispatch();
 
   
-  const userId = useSelector((state) => state.auth.userId);
-  const authStatus = useSelector((state) => state.auth.status);
-  const product = useSelector((state) => state.products.selectedProduct);
-  const similarProducts = useSelector((state) => state.products.similarProducts); 
-  const currentPage = useSelector((state) => state.products.currentPage);
+  const { authStatus, userId, selectedProduct, similarProducts, currentPage } = useAppSelectors();
 
 
   const [productQuantity, setProductQuantity] = useState(1);
@@ -33,7 +30,7 @@ function useProductDetailsPage() {
         setLoading(false);
         setAddToCartError("There has been an error. Please login again to add item to cart");
       }
-        const response = await API.addToCart(userId, product.id, productQuantity);
+        const response = await API.addToCart(userId, selectedProduct.id, productQuantity);
         if(response.success) {
           setLoading(false);
           setAddToCartSuccess(response.message);
@@ -70,7 +67,7 @@ function useProductDetailsPage() {
   }
 
   return {
-    product,
+    selectedProduct,
     similarProducts,
     productQuantity,
     setProductQuantity,

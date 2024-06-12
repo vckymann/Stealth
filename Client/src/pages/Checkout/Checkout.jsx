@@ -25,7 +25,7 @@ import InfoMobile from '../../components/Checkout/InfoMobile';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import Review from '../../components/Checkout/Review';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import useAppSelectors from '../../store/selectors';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
@@ -45,8 +45,8 @@ function getStepContent(step) {
 export default function Checkout() {
   const mode = 'dark';
   const [activeStep, setActiveStep] = React.useState(0);
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
+  const { totalPrice } = useAppSelectors();
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

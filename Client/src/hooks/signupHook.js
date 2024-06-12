@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
-import { login as storeLogin } from "../store/authslice";
+import { login as storeLogin } from "../store/slices/authslice";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import authService from "../appwrite/auth";
 import API from "../apis/api";
-import { userInfo } from "../store/authslice";
+import { userInfo } from "../store/slices/authslice";
 import { useNavigate } from "react-router-dom";
 
 function useSignUp() {
