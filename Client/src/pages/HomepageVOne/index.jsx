@@ -38,7 +38,7 @@ export default function HomepageVOnePage() {
             <Text className="text-xl text-center font-normal pt-2" as={'p'} >
               Find your Dream Shoe Pair From 5000+ Collections
             </Text>
-            <div className="grid grid-cols-2 place-items-center py-2 bg-green-500 rounded-sm lg:flex lg:justify-center lg:gap-12 mt-6">
+            <div className="grid grid-cols-2 place-items-center py-2 bg-green-500 rounded-sm lg:flex lg:justify-center lg:gap-40 mt-6">
               <Img className="max-w-[100px] max-h-[60px]" src="images/brands/nike.png" alt="testImg" />
               <Img className="max-w-[100px] max-h-[80px]" src="images/brands/adidas.png" alt="testImg" />
               <Img className="max-w-[100px] max-h-[60px]" src="images/brands/under armour.png" alt="testImg" />
@@ -51,7 +51,7 @@ export default function HomepageVOnePage() {
           <section className="mt-1 border-t-2 border-b-2 border-green-500">
             <div className="flex flex-col items-center lg:flex-row lg:items-start lg:justify-center py-2">
             <div>
-              <Img className="w-[40rem] h-[39rem] lg:h-[34rem] object-cover" src="images/Homepage/poster-22.jpg" alt="testImg" />
+              <Img className="w-[44rem] h-[39rem] lg:h-[34rem] object-cover" src="images/Homepage/poster-22.jpg" alt="testImg" />
             </div>
             <div className="flex flex-col gap-y-12 justify-center">
                 <div className="flex flex-col gap-y-8 items-center">
@@ -77,7 +77,7 @@ export default function HomepageVOnePage() {
             <section className="mt-24 py-12">
               <Text className="text-center text-2xl font-medium" >At Stealth Shoes</Text>
               <Text className="text-center mt-3 font-bold text-6xl lg:pb-24" >We Offer</Text>
-              <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-12 mt-16">
+              <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-12 mt-3">
               <div className="flex flex-col gap-12 max-w-[40rem]">
                 <div>
                   <Text className="text-2xl font-bold text-center lg:text-start"><span className="-ml-5">1. </span>Top Notch Quality</Text>
