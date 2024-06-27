@@ -40,35 +40,46 @@ export default function CartPage() {
               <>
               {cartItems.length === 0 ? <Text className="text-center text-4xl py-12">No items in cart</Text> : 
                 cartItems.map((item) => (
-                  <div className="flex flex-col sm:flex-row gap-12 justify-around max-w-[40rem] w-full items-center shadow-[0px_2px_1px_0px] shadow-green-500 rounded-md bg-[#323030] p-4" key={item.product_id}>
-                    <Img className="w-[13rem] sm:w-[17rem]" src={item.images ? item.images : ""} />
-                    <div className="flex flex-col items-center sm:items-start  gap-3">
-                    <Text className="text-xl">{item.product}</Text>
-                    <Text className="pr-2">Price - ${item.price}</Text>
+                  <div className="flex flex-col sm:flex-row gap-12 relative max-w-[40rem] w-full items-center shadow-[0px_2px_1px_0px] shadow-green-500 rounded-md bg-[#323030] p-4" key={item.product_id}>
+                    <div className="border-2 border-white">
+                    <Img className="w-[13rem]" src={item.images ? item.images : ""} />
+                    </div>                    
+                    <div className="flex flex-col items-center sm:items-start  gap-3">                      
+                    <Text className="text-2xl font-semibold">{item.product}</Text>
+                    
                     {editProduct === item.product_id ? (
                       <div className="flex justify-between w-[8rem]">
-                      <Button className="px-3 hover:bg-[#666666] rounded-md border-2" onClick={() => {handleUpdateQuantity(item.product_id, item.quantity - 1 > 0 ? item.quantity - 1 : 1)}}>-</Button>
-                      <p>{item.quantity}</p>
-                      <Button className="px-3 hover:bg-[#666666] rounded-md border-2" onClick={() => {handleUpdateQuantity(item.product_id, item.quantity + 1)}}>+</Button>
+                      <select className="bg-[#323030] border-2 py-1 px-1" onChange={(e) => handleUpdateQuantity(item.product_id, e.target.value)}>
+                        {Array.from({ length: 8 }, (_, i) => i + 1).map((num) => (
+                          <option key={num} value={num}>Quantity - {num}</option>
+                        ))}
+                      </select>
                     </div>
                     ): (
-                      <Text className="text-xl">Quantity - {item.quantity}</Text>
+                      <div className="border-2 border-white p-1 px-2">
+                        <Text className="text-xl">Quantity - {item.quantity}</Text>
+                      </div>
                     )}
-                    <Text className="pr-2">Subtotal - ${item.total}</Text>                  
                     <div className="flex gap-2 pt-2">
                     {editProduct === item.product_id ? (                    
-                      <Button disabled={disabled} onClick={handleConfirm} className="hover:bg-[#666666] px-3 py-2 rounded-md border-2">
+                      <Button disabled={disabled} onClick={handleConfirm} className="hover:bg-[#666666] px-3 py-2 border-2">
                       Confirm
                     </Button>
                     ) : 
-                    <Button className="hover:bg-[#666666] px-3 py-2 rounded-md  border-2" onClick={() => {handleEdit(item.product_id)}}>
+                    <Button className="hover:bg-[#666666] px-3 py-2  border-2" onClick={() => {handleEdit(item.product_id)}}>
                     Edit
                     </Button>
-                    }
-                    <Button disabled={disabled} className="hover:bg-[#666666] px-3 py-2 rounded-md text-center border-2 mr-2" onClick={() => {handleDelete(item.product_id)}}>
-                    Delete
-                    </Button>
+                    }                    
                     </div>
+                    <div className="flex items-center gap-4">
+                    <Text className="border-2 p-2">Price ${item.price}</Text>    
+                    <Text className="border-2 p-2">Subtotal ${item.total}</Text>               
+                    </div>
+                    </div>
+                    <div>
+                    <Button disabled={disabled} className="hover:text-green-500 absolute top-2 right-2 text-xl" onClick={() => {handleDelete(item.product_id)}}>
+                    X
+                    </Button>
                     </div>
                   </div>
                 ))}              
@@ -82,7 +93,7 @@ export default function CartPage() {
           <div className="flex flex-col gap-3 px-3 border-b-4 py-12">
             <div className="flex justify-between">
               <Text className="">Subtotal</Text>
-              <Text className="w-10 text-center">{totalPrice}</Text>
+              <Text className="text-center">{totalPrice}</Text>
             </div>
             <div className="flex justify-between">
               <Text className="">Shipping</Text>

@@ -6,7 +6,7 @@ export function ThreeDCardDemo({product, handleDetails,width,height,details = tr
   return (
     <CardContainer className="inter-var">
       <CardBody className={`${width} ${height} 0 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-green-500/[0.3] bg-black/90 dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex flex-col items-center justify-end`}>
-        <CardItem translateZ="100" className="w-full flex justify-center items-center">
+        <CardItem translateZ={100} className="w-full flex justify-center items-center">
          {product &&
           <Img
           loading={lazyLoad ? "lazy" : "eager"}
